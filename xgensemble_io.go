@@ -6,9 +6,9 @@ import (
 	"math"
 	"os"
 
-	"github.com/dmitryikh/leaves/internal/xgbin"
-	"github.com/dmitryikh/leaves/internal/xgjson"
-	"github.com/dmitryikh/leaves/transformation"
+	"github.com/sysutf/leaves/internal/xgbin"
+	"github.com/sysutf/leaves/internal/xgjson"
+	"github.com/sysutf/leaves/transformation"
 )
 
 func xgSplitIndex(origNode *xgbin.Node) uint32 {

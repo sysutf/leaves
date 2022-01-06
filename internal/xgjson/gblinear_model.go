@@ -1,6 +1,6 @@
 package xgjson
 
-import "github.com/dmitryikh/leaves/internal/xgbin"
+import "github.com/sysutf/leaves/internal/xgbin"
 
 type GBLinearJson struct {
 	Learner GBLinearLearner `json:"learner"`

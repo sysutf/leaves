@@ -1,6 +1,6 @@
 package xgjson
 
-import "github.com/dmitryikh/leaves/internal/xgbin"
+import "github.com/sysutf/leaves/internal/xgbin"
 
 type GBTreeJson struct {
 	Learner GBTreeLearner `json:"learner"`
@@ -68,7 +68,7 @@ func (t *Tree) toBinTreeModel() *xgbin.TreeModel {
 		nodes[idx].CRight = t.RightChildren[idx]
 		nodes[idx].CLeft = t.LeftChildren[idx]
 		nodes[idx].Parent = t.Parents[idx]
-		nodes[idx].Parent = int32(uint32(t.Parents[idx]) | 1 << 31)
+		nodes[idx].Parent = int32(uint32(t.Parents[idx]) | 1<<31)
 		if t.DefaultLeft[idx] {
 			t.SplitIndices[idx] |= 1 << 31
 		}

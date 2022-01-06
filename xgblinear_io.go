@@ -3,11 +3,11 @@ package leaves
 import (
 	"bufio"
 	"fmt"
-	"github.com/dmitryikh/leaves/internal/xgjson"
+	"github.com/sysutf/leaves/internal/xgjson"
 	"os"
 
-	"github.com/dmitryikh/leaves/internal/xgbin"
-	"github.com/dmitryikh/leaves/transformation"
+	"github.com/sysutf/leaves/internal/xgbin"
+	"github.com/sysutf/leaves/transformation"
 )
 
 // XGBLinearFromReader reads  XGBoost's 'gblinear' model from `reader`
