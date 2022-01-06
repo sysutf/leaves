@@ -94,8 +94,8 @@ np.savetxt('$data_filename', X_test, delimiter='\t')
 package main
 
 import (
-    "github.com/dmitryikh/leaves"
-    "github.com/dmitryikh/leaves/mat"
+    "github.com/sysutf/leaves"
+    "github.com/sysutf/leaves/mat"
 )
 
 func main() {
@@ -164,8 +164,8 @@ datasets.dump_svmlight_file(X_test, y_test, '$data_filename')
 package main
 
 import (
-    "github.com/dmitryikh/leaves"
-    "github.com/dmitryikh/leaves/mat"
+    "github.com/sysutf/leaves"
+    "github.com/sysutf/leaves/mat"
 )
 
 func main() {
@@ -222,8 +222,8 @@ datasets.dump_svmlight_file(X_test, y_test, '$data_filename')
 package main
 
 import (
-    "github.com/dmitryikh/leaves"
-    "github.com/dmitryikh/leaves/mat"
+    "github.com/sysutf/leaves"
+    "github.com/sysutf/leaves/mat"
 )
 
 func main() {
