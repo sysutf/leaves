@@ -15,7 +15,18 @@ func ReadGBTree(filePath string) (*GBTreeJson, error) {
 	if err := json.Unmarshal(bytes, gbTree); err != nil {
 		return nil, err
 	}
-	if gbTree.Learner.GradientBooster.Name != "gbtree" && gbTree.Learner.GradientBooster.Name != "dart"{
+	if gbTree.Learner.GradientBooster.Name != "gbtree" && gbTree.Learner.GradientBooster.Name != "dart" {
+		return nil, fmt.Errorf("wrong gbtree format, this reader can only read gbtree or dart")
+	}
+	return gbTree, nil
+}
+
+func ReadGBTreeStr(modelStr string) (*GBTreeJson, error) {
+	gbTree := &GBTreeJson{}
+	if err := json.Unmarshal([]byte(modelStr), gbTree); err != nil {
+		return nil, err
+	}
+	if gbTree.Learner.GradientBooster.Name != "gbtree" && gbTree.Learner.GradientBooster.Name != "dart" {
 		return nil, fmt.Errorf("wrong gbtree format, this reader can only read gbtree or dart")
 	}
 	return gbTree, nil

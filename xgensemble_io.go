@@ -247,6 +247,22 @@ func checkTreeInfo(treeInfo []int32, nRawOutputGroups int) error {
 	return nil
 }
 
+func XGEnsembleFromJsonStr(modelStr string, loadTransformation bool) (*Ensemble, error) {
+	gbTreeJson, err := xgjson.ReadGBTreeStr(modelStr)
+	if err != nil {
+		return nil, err
+	}
+	e, err := createXGEnsembleFromGBTreeJson(gbTreeJson)
+	if err != nil {
+		return nil, err
+	}
+	transform, err := createTransform(loadTransformation, e.nRawOutputGroups, gbTreeJson.Learner.Objective.Name)
+	if err != nil {
+		return nil, err
+	}
+	return &Ensemble{e, transform}, nil
+}
+
 // XGEnsembleFromFile reads XGBoost model from binary file or json file. Works with 'gbtree' and 'dart' models
 func XGEnsembleFromFile(filename string, loadTransformation bool) (*Ensemble, error) {
 	if ensemble, err := xgEnsembleFromJsonFile(filename, loadTransformation); err == nil {
